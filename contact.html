@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact – Hill Set City Group</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+    <header>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6)">We'd love to hear from you!</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Our Mission</a>
+        <a href="programs.html">Programs</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header" style="margin-top:16px;">
+        <h2 style="margin:0;">Contact Us</h2>
+      </section>
+
+      <section class="contact">
+        <p>One of art's defining traits is collaboration. We would absolutely adore your input — suggestions, show ideas, pitches, or just hello!</p>
+
+        <form action="https://formsubmit.co/79e06a2f584a9598c65fa313e9f024f1
+" method="POST" />
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Name" required />
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Email Address" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+          <div style="text-align:center; margin-top:12px;">
+            <button class="btn large" type="submit">Send Message</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2025 Hill Set City Group</footer>
+  </div>
+
+  <!-- Thank-You Modal -->
+<div id="thankYouModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="thankYouMessage"></p>
+  </div>
+</div>
+
+<style>
+  /* Modal Background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Aqua-Style Modal Box */
+  .modal-content {
+    background: linear-gradient(
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.05)
+    );
+    border-radius: 18px;
+    padding: 28px 38px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    color: var(--soft-white);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:
+      0 12px 32px rgba(0,0,0,0.7),
+      inset 0 1px 4px var(--glass-highlight),
+      0 0 12px var(--gold);
+    animation: modalFade 0.35s ease-out;
+    position: relative;
+  }
+
+  /* Close Button */
+  .modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--light-gold);
+    filter: drop-shadow(0 0 4px var(--gold));
+  }
+  .modal-content .close:hover {
+    color: var(--gold);
+  }
+
+  /* Animation */
+  @keyframes modalFade {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Highlight message */
+  #thankYouMessage strong {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const modal = document.getElementById('thankYouModal');
+  const message = document.getElementById('thankYouMessage');
+  const closeBtn = document.querySelector('.modal .close');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim() || "Friend";
+    message.innerHTML = `<strong>Thanks, ${name}!</strong><br>We’ll talk to you soon!`;
+
+    form.reset();
+    modal.style.display = 'flex';
+
+    // Auto-close after 4 seconds
+    setTimeout(() => modal.style.display = 'none', 4000);
+  });
+
+  // Manual close handlers
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

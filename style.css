@@ -1,0 +1,207 @@
+/* ===========================
+   Hill Set City Group – Y2K CSS
+   Inspired by Apple Aqua UI
+   =========================== */
+
+/* COLORS */
+:root {
+    --dark-blue: #0a0a20;
+    --mid-blue: #1a1a3f;
+    --gold: #f2c94c;
+    --light-gold: #ffe48a;
+    --soft-white: #faf9f2;
+    --glass-highlight: rgba(255, 255, 255, 0.45);
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    background: var(--dark-blue) url("HSC FINAL_group.png") no-repeat bottom right/350px;
+    color: var(--soft-white);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--light-gold);
+}
+
+/* HEADER & NAVBAR */
+header {
+    background: linear-gradient(#13132b, #0d0d22);
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--gold);
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+nav a {
+    margin-left: 18px;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 7px;
+    background: radial-gradient(circle at top, var(--glass-highlight), transparent 65%);
+}
+
+nav a.active {
+    background: linear-gradient(var(--gold), var(--light-gold));
+    color: #000;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.5),
+                inset 0 -2px 4px rgba(0,0,0,0.3),
+                0 0 6px var(--gold);
+}
+
+/* PAGE HEADERS */
+.page-header, .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(var(--mid-blue), var(--dark-blue));
+}
+
+.page-header h1, .hero h1 {
+    color: var(--light-gold);
+    font-size: 2.4rem;
+    text-shadow: 0 0 15px rgba(255,255,150,0.5);
+}
+
+/* GLASS CARDS */
+.card, .mission-box, .contact form, .card-grid .card {
+    background: rgba(10,10,30,0.6);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4),
+                inset 0 1px 3px var(--glass-highlight);
+}
+
+/* GRID */
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* BUTTONS — Aqua Style */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(var(--gold), var(--light-gold));
+    color: #000;
+    cursor: pointer;
+    box-shadow: inset 0 2px 6px white,
+                inset 0 -4px 6px rgba(0,0,0,0.3),
+                0 3px 10px rgba(0,0,0,0.6);
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.btn.large {
+    font-size: 1.2rem;
+}
+
+.btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* FORMS */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin: 10px 0;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0a0a1b;
+    border-top: 2px solid var(--gold);
+    color: var(--light-gold);
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    nav a {
+        margin-left: 8px;
+        padding: 3px 6px;
+    }
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* === Center all content under headers === */
+
+section,
+.hero,
+.page-header,
+.snapshot,
+.programs,
+.programs-full,
+.contact,
+.donate,
+.mission {
+    text-align: center;
+}
+
+/* Ensure inner paragraphs + forms don’t hug edges */
+section p,
+.mission p,
+.snapshot p,
+.donate p,
+.programs-full p {
+    max-width: 750px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+/* Center and size hero buttons nicely */
+.hero-buttons,
+.donate-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Center card containers fully */
+.card-grid {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Center any standalone images */
+img {
+    display: block;
+    margin: 20px auto;
+}
